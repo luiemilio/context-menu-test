@@ -1,34 +1,26 @@
-# Hadouken Application Template
+# Context Menu Test
 
-A simple unopinionated Hadouken application template. The purpose of this repository is to allow users to get started with Hadouken immediately by providing a development setup that does not require initial configuration. The setup has minimal dependencies and the feature set is intentionally limited. Any further configuration can be achieved by editing the `app.json` file: [Application Config](https://openfin.co/application-config/).
+Small app to test ctrl+alt+shift keyword combination to open the Context Menu in OpenFin.
 
-### What you get:
+```
+window.addEventListener('contextmenu', onContextMenu, true);
 
-#### [Application-Launcher](https://www.npmjs.com/package/openfin-launcher)
+function onContextMenu(event) {
+	if (event.ctrlKey && event.shiftKey && event.altKey) {
+		console.log('context menu opened...');
+		return;
+	}
 
-* Automates the downloading and launching of the Hadouken Runtime.
+	event.preventDefault();
+}
+```
 
-#### Development server
+## Get started
 
-* [Live-server](https://www.npmjs.com/package/live-server) with built-in live reloading after changes to files.
+1. Clone this repo.
+2. `npm install`
+3. `npm start`
 
-#### Basic HTML/Javascript Template
+### Test Context Menu
 
-* HTML 5 and ES6 Template with Hadouken integration.
-
-#### Service Worker
-
-* Uses the [network and cache](https://serviceworke.rs/strategy-network-or-cache.html) recipe found on the [Mozilla Service Worker Cookbok](https://serviceworke.rs/) to implement offline browsing.
-
-#### [Visual Studio code](https://code.visualstudio.com/) integration, thanks to @jcarter
-
-* Attach to debugger for in-editor break points, call stacks, and an interactive console
-* Hadouken configuration ( `app.json` ) smart completion based on available parameters
-* Hadouken API smart completions based on variable types and function definitions
-
-### How to use this:
-
-* Clone this repository: `git clone https://github.com/HadoukenIO/app-template`
-* Install the dependencies: `cd app-template` & `npm install`
-* Start the live-server and launch the application: `npm start`
-* Add your Javascript code to `main.js` and your HTML to `index.html`
+1. Press ctrl+alt+shift to open the Context Menu.

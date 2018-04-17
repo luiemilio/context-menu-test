@@ -8,7 +8,7 @@
         "saveWindowState": true
     },
     "runtime": {
-        "arguments": "--remote-debugging-port=9090",
+        "arguments": "--remote-debugging-port=9090 --v=1",
         "version": "community"
     },
     "shortcut": {
